@@ -1,0 +1,25 @@
+function chpwd() {
+    zpython "$(cat ~/.config/zsh/chpwd.py)"
+}
+
+module_path=($module_path /usr/local/lib/zpython)
+zmodload zsh/zpython
+
+unsetopt share_history
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+source /usr/local/bin/virtualenvwrapper_lazy.sh
+
+alias vim=nvim
+alias mkvirtualenv2='mkvirtualenv -p $(which python2)'
+alias mkvirtualenv3='mkvirtualenv -p $(which python3)'
+
+alias tmux='TERM=xterm-256color tmux attach || TERM=xterm-256color tmux new'
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export PATH=$HOME/bin:$PATH

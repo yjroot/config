@@ -1,0 +1,23 @@
+set -g default-terminal "screen-256color"
+
+set -g prefix C-s
+set-window-option -g mode-keys vi
+set-window-option -g automatic-rename on
+
+# move around panes with hjkl, as one would in vim after pressing ctrl-w
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# resize panes like vim
+bind < resize-pane -L 10
+bind > resize-pane -R 10
+bind - resize-pane -D 10
+bind + resize-pane -U 10
+
+bind 0 select-window -t 10
+set -g base-index 1
+set -g pane-base-index 1
+set -sg escape-time 0
+set-option -g repeat-time 0
